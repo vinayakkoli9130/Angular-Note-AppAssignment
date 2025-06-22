@@ -1,0 +1,62 @@
+<!-- 
+ <div class="filter-box">
+  <mat-form-field>
+    <input matInput [(ngModel)]="filterTitle" placeholder="Filter by title" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="filterTags" placeholder="Filter by tags" />
+  </mat-form-field>
+  <button mat-raised-button (click)="applyFilter()">Apply Filter</button>
+  <button mat-raised-button (click)="clearFilter()">Clear Filter</button>
+</div>
+
+<div class="notes-grid">
+  <div class="note-card" *ngFor="let note of notes">
+    <mat-card>
+      <h3>{{ note.title }}</h3>
+      <p>{{ note.content }}</p>
+      <p><strong>Tags:</strong> {{ note.tags.join(', ') }}</p>
+      <button mat-button (click)="onEdit.emit(note)">Edit</button>
+      <button mat-button (click)="onDelete.emit(note.id)">Delete</button>
+    </mat-card>
+  </div>
+</div> -->
+<div class="container mt-4">
+  <div class="row g-3 align-items-center filter-box mb-4">
+    <div class="col-md-4">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Filter by title</mat-label>
+        <input matInput [(ngModel)]="filterTitle" placeholder="Title" />
+      </mat-form-field>
+    </div>
+    <div class="col-md-4">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Filter by tags</mat-label>
+        <input matInput [(ngModel)]="filterTags" placeholder="Tags" />
+      </mat-form-field>
+    </div>
+    <div class="col-md-4 d-flex gap-2">
+      <button mat-raised-button color="primary" (click)="applyFilter()">Apply</button>
+      <button mat-raised-button color="warn" (click)="clearFilter()">Clear</button>
+    </div>
+  </div>
+
+  <div class="row notes-grid">
+    <div class="col-md-4 mb-4" *ngFor="let note of notes">
+      <mat-card class="h-100 shadow-sm border border-light-subtle">
+        <mat-card-header>
+          <mat-card-title>{{ note.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ note.content }}</p>
+          <p><strong>Tags:</strong> {{ note.tags.join(', ') }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-stroked-button color="accent" (click)="onEdit.emit(note)">Edit</button>
+          <button mat-stroked-button color="warn"  (click)="onDelete.emit(note.id)">Delete</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
+

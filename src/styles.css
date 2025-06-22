@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+ @import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+  font-family: Roboto, sans-serif;
+}
+
+.container {
+  padding: 20px;
+}
+
+
+.note-form-card {
+  margin-bottom: 20px;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.note-card {
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+

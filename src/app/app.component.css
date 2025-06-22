@@ -1,0 +1,10 @@
+/* Customize the appearance of the app component */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.note-form-card {
+  margin-bottom: 30px;
+}
